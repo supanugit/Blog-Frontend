@@ -47,9 +47,12 @@ export default function SingleBlogPage() {
     const fetchBlogAndComments = async () => {
       try {
         // Fetch blog
+
         const blogRes = await axios.get(
           `${process.env.NEXT_PUBLIC_BACKEND_URL}/blogs/${id}`,
-          { withCredentials: true }
+          {
+            withCredentials: true,
+          }
         );
 
         if (blogRes.data.success) setBlog(blogRes.data.data);
@@ -167,11 +170,11 @@ export default function SingleBlogPage() {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="text-center p-8 bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700 max-w-md">
           <h2 className="text-2xl font-bold text-red-400 mb-4">Error</h2>
-          <p className="text-gray-300 mb-6">{error}</p>
+          <p className="text-gray-300 mb-6">Login First</p>
           <button
-            onClick={() => router.back()}
+            onClick={() => router.replace("/login")}
             className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors text-white flex items-center mx-auto">
-            <FiArrowLeft className="mr-2" /> Go Back
+            <FiArrowLeft className="mr-2" /> Login
           </button>
         </div>
       </div>

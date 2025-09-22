@@ -178,7 +178,7 @@ export default function AllBlogsPage() {
             </p>
             {!searchTerm && (
               <Link
-                href="/blog/create"
+                href="/blog/create-blog"
                 className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md transition-colors">
                 Create Your First Blog
               </Link>
