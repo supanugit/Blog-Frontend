@@ -12,9 +12,7 @@ import {
   FiEyeOff,
 } from "react-icons/fi";
 
-type Props = {};
-
-export default function LoginPage({}: Props) {
+export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
